@@ -1,0 +1,28 @@
+@startuml client
+    cloud ActionPool as P {
+    component "Action" as PA
+    component "Operation" as PO
+}
+
+folder "Client Side" as C {
+    package "GLSP-VSCode" as CG {
+        component "Extension" as CGE
+        component "Langium Worker" as CGL
+    }
+
+    package "GLSP-Webview" as CW {
+        component "Action/Operation Handlers" as CWA
+        component "Monaco Editor" as CWM
+        component "Command Stack" as CWC
+        component "Viewer" as CWV
+    }
+}
+
+CWA <--> P : "Tx/Rx"
+CWM ..> CGL : "Language Server"
+CWM ..> CWV : "Displayed by"
+CWM <--> CWA : "Tx/Rx"
+CWA <--> CWC : "Tx/Rx"
+CWC <--> CWV : "Tx/Rx"
+CW .....> CGE : "Runs in bundle"
+@enduml

@@ -1,0 +1,23 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "eslint.format.enable": true,
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ],
+    "eslint.workingDirectories": [
+        {
+            "mode": "auto"
+        }
+    ],
+    "[latex]": {
+        "diffEditor.wordWrap": "on",
+        "editor.wordWrap": "on"
+    },
+    "plantuml.exportIncludeFolderHeirarchy": false,
+    "plantuml.exportOutDir": "docs/thesis/images",
+    "plantuml.exportFormat": "eps",
+    "plantuml.exportSubFolder": false
+}

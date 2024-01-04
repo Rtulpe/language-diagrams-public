@@ -1,0 +1,19 @@
+{
+    "root": false,
+    "ignorePatterns": ["lib", "**/*.d.ts", "syntaxes", "ldv.monarch.ts"],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"]
+            }
+        }
+    },
+    "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": ["error", {
+            "allowArgumentsExplicitlyTypedAsAny": true
+        }],
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-unsafe-call": "off"
+    }
+}

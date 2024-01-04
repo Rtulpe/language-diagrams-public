@@ -1,0 +1,36 @@
+@startuml class
+hide circle
+
+package "Model" {
+    class Customer{
+    hasOrdered: boolean
+    serviceFee: number
+
+    {method} Validations:
+    {method} 
+    {method} hasOrdered == true
+    {method} Balance.money > (Order.cost + serviceFee)
+}
+
+class "Order" {
+    orderID: string
+    cost: number
+
+    {method} Validations:
+    {method} 
+    {method} orderID != null && cost > 0
+}
+
+class "Balance" {
+    money: number
+    isBlocked: boolean
+
+    {method} Validations:
+    {method} 
+    {method} money >= 0 && isBlocked == false
+}
+}
+
+Customer --> Order
+Customer --> Balance
+@enduml

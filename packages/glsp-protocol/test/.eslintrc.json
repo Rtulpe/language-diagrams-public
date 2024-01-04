@@ -1,0 +1,24 @@
+{
+    "root": false,
+
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module",
+        "project": "./tsconfig.test.json"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"]
+            }
+        }
+    },
+    "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": ["error", {
+            "allowArgumentsExplicitlyTypedAsAny": true
+        }],
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-unsafe-call": "off"
+    }
+}

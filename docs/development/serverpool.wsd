@@ -1,0 +1,35 @@
+@startuml
+start
+
+group Server
+    :Action Dispatched;
+
+    switch ("configured as")
+    case (Server Action)
+        :Send to handler;
+        stop
+    case (Unconfigured)
+        :Throw error;
+        stop
+    case (Client Action)
+        :Send to client;
+    endswitch
+
+end group
+
+group Action Pool
+    :Pass through;
+end group
+
+group Client
+    if (is configured) then (yes)
+        :Send to handler;
+        stop
+
+        else (no)
+        :Throw error;
+        stop
+    endif
+end group
+
+@enduml

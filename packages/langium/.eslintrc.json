@@ -1,0 +1,11 @@
+{
+    "root": false,
+    "ignorePatterns": ["lib", "bundle", "**/*.d.ts", "syntaxes", "generated"],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"]
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@startuml architecture
+
+cloud ActionPool as P {
+    component "Action" as PA
+    component "Operation" as PO
+}
+
+database Workspace as W {
+    component "Source Files" as WS
+}
+
+folder "Client Side" as C {
+    package "GLSP-VSCode" as CG {
+        component "Extension" as CGE
+        component "Langium Worker" as CGL
+    }
+
+    package "GLSP-Webview" as CW {
+        component "Action/Operation Handlers" as CWA
+        component "Monaco Editor" as CWM
+        component "Command Stack" as CWC
+        component "Viewer" as CWV
+    }
+}
+
+folder "Server Side" as S {
+    package "GLSP-Server" as SG {
+        component "Action/Operation Handlers" as SGA
+        component "Model/Storage" as SGM
+        component "Graphical Model Factory" as SGG
+    }
+}
+
+CWA <--> P : "Tx/Rx"
+SGA <--> P : "Tx/Rx"
+WS <-- SGM : "R/W"
+SGM --> SGG : "Create Graphical Model"
+SGG --> SGA : "Submit Graphical Model"
+SGA --> SGM : "Model Consistency"
+CWM ..> CGL : "Language Server"
+CWM ..> CWV : "Displayed by"
+CWM <--> CWA : "Tx/Rx"
+CWA <--> CWC : "Tx/Rx"
+CWC <--> CWV : "Tx/Rx"
+CW .....> CGE : "Runs in bundle"
+
+@enduml

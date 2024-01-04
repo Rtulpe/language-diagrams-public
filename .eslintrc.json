@@ -1,0 +1,129 @@
+{
+  "root": true,
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "airbnb-typescript",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "simple-import-sort",
+    "prettier"
+  ],
+  "rules": {
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": [
+      "warn",
+      {
+        "ignoreTypeValueShadow": true,
+        "ignoreFunctionTypeParameterNameValueShadow": true
+      }
+    ],
+    "prettier/prettier": [
+      "warn",
+      {},
+      {
+        "usePrettierrc": true
+      }
+    ],
+    "@typescript-eslint/semi": "off",
+    "@typescript-eslint/consistent-type-imports": "warn",
+    "@typescript-eslint/consistent-type-exports": [
+      "warn",
+      {
+        "fixMixedExportsWithInlineTypeSpecifier": true
+      }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": ["error", {
+      "allowArgumentsExplicitlyTypedAsAny": false,
+      "allowDirectConstAssertionInArrowFunctions": false,
+      "allowHigherOrderFunctions": true,
+      "allowTypedFunctionExpressions": false
+    }],
+    "@typescript-eslint/no-duplicate-enum-values": "error",
+    "@typescript-eslint/no-invalid-void-type": "warn",
+    "@typescript-eslint/no-unnecessary-condition": "warn",
+    "@typescript-eslint/prefer-includes": "warn",
+    "@typescript-eslint/prefer-string-starts-ends-with": "warn",
+    "@typescript-eslint/strict-boolean-expressions": ["error", {
+      "allowString": false,
+      "allowNumber": false,
+      "allowNullableObject": false,
+      "allowNullableBoolean": false,
+      "allowNullableString": false,
+      "allowNullableNumber": false,
+      "allowAny": false
+    }],
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "eqeqeq": "error",
+    "no-throw-literal": "warn",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "@typescript-eslint/no-empty-function": [
+      "error",
+      {
+        "allow": [
+          "constructors"
+        ]
+      }
+    ],
+    "semi": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": "off",
+    "react/jsx-filename-extension": "off",
+    "sort-imports": "off",
+    "import/order": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "[_]+",
+        "varsIgnorePattern": "[_]+"
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": [
+          "camelCase",
+          "UPPER_CASE"
+        ],
+        "filter": {
+          "regex": "[_]+",
+          "match": true
+        },
+        "leadingUnderscore": "allow",
+        "trailingUnderscore": "allow"
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "lib",
+    "bundle",
+    "pack",
+    "**/*.d.ts",
+    "**/*.js"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "src"
+        ]
+      }
+    }
+  }
+}

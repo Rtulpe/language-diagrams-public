@@ -1,0 +1,26 @@
+@startuml
+
+folder "GLSP Server" as S {
+    component "Action Dispatcher" as SD
+    component "Action Handler" as SH
+    component "Model State" as SM
+    component "Model Storage" as SS
+    component "Graphical Model Factory" as SF
+}
+
+database "Workspace" as W {
+    component "Source Files" as WS
+}
+
+cloud "GLSP Client" as C
+
+SD --> SH: "Action"
+SS --> W: "Read/Write"
+SM <--> SS: "Maintain Consistency"
+SM --> SF: "Create Graphical Model"
+SF -> SD: "Submit Graphical Model"
+SH -> SM: "Update Model State"
+SD -> C: "Submit Graphical Model"
+C -> SH: "Receive Action"
+
+@enduml

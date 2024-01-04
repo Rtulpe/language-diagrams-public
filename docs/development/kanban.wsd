@@ -1,0 +1,26 @@
+@startuml
+
+storage "K1: Initial Setup" as K1
+storage "K2: Implement Monaco" as K2
+storage "K3: Integrate Langium with Monaco" as K3
+storage "K4: Sync Monaco with GLSP" as K4
+storage "K5: Implement Expressions" as K5
+storage "K6: Implement Associations" as K6
+storage "K7: Implement Fields" as K7
+storage "K8: Integrate Fields with Langium" as K8
+storage "K9: Implement Layouting" as K9
+
+K1 -down-> K2
+K2 -down-> K3
+K2 -down-> K4
+K3 -down-> K5
+K1 -down-> K6
+K1 -down-> K7
+K4 -down-> K8
+K5 -down-> K8
+K6 -down-> K8
+K7 -down-> K8
+K6 -down-> K9
+K7 -down-> K9
+
+@enduml

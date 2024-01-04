@@ -1,0 +1,21 @@
+@startuml
+
+start
+switch (npx gulp)
+case (build)
+fork
+    :yarn build glsp-server;
+fork again
+    :yarn build glsp-client;
+end fork
+case (test)
+fork
+    :jest glsp-server;
+fork again
+    :jest glsp-client;
+end fork
+endswitch
+stop
+
+
+@enduml

@@ -1,0 +1,8 @@
+ignores: [
+    "rimraf",
+    "vscode",
+    "@types/*",
+    "prettier",
+    "vscode-uri",
+    "@jest/globals"
+]

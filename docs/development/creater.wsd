@@ -1,0 +1,37 @@
+@startuml
+
+skinparam sequence {
+    ParticipantFontSize 17
+    ArrowFontSize 17
+}
+
+skinparam MaxMessageSize 250
+
+participant "Client" as C
+
+box "Server" #LightSalmon
+
+participant "Action Handler" as O
+
+participant "Action Dispatcher" as A
+
+participant "Model/Storage" as M
+
+participant "Graphical Model Factory" as G
+
+end box
+
+participant "Source Files" as S
+
+C -> O: Receive operation
+O -> M: Perform operation
+M -> S: Update source files
+M -> A: Sends "DirtyState" Action
+A -> O: Receives
+...
+O -> G: Creates graphical model
+...
+G -> A: Sends "UpdateModel" Action
+A -> C: Receives
+
+@enduml

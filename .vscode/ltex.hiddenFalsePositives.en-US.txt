@@ -1,0 +1,1 @@
+{"rule":"THE_IT","sentence":"^\\QAdditionally, describe function is used to group the test cases together, while the it function is used to define the individual test case.\\E$"}

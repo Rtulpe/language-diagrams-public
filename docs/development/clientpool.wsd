@@ -1,0 +1,32 @@
+@startuml
+start
+
+group Client
+    :Action Dispatched;
+
+    if (is configured) then (yes)
+        :Send to handler;
+        stop
+
+        else (no)
+        :Send to server;
+    endif
+end group
+
+group Action Pool
+    :Pass through;
+end group
+
+group Server
+    if (is configured) then (yes)
+        :Send to handler;
+        stop
+
+        else (no)
+        :Throw error;
+        stop
+    endif
+
+end group
+
+@enduml

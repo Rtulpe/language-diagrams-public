@@ -1,0 +1,152 @@
+{
+  "name": "language-diagrams-vscode",
+  "version": "0.0.1",
+  "description": "Extension for language diagrams",
+  "repository": {
+    "type": "git"
+  },
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "ld.glspDiagram",
+        "displayName": "Language Diagram Editor",
+        "selector": [
+          {
+            "filenamePattern": "*.ld"
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "ld.fit",
+        "title": "Fit to Screen",
+        "category": "Language Diagram",
+        "enablement": "activeCustomEditorId == 'ld.glspDiagram'"
+      },
+      {
+        "command": "ld.center",
+        "title": "Center selection",
+        "category": "Language Diagram",
+        "enablement": "activeCustomEditorId == 'ld.glspDiagram'"
+      },
+      {
+        "command": "ld.layout",
+        "title": "Layout diagram",
+        "category": "Language Diagram",
+        "enablement": "activeCustomEditorId == 'ld.glspDiagram'"
+      },
+      {
+        "command": "ld.exportAsSVG",
+        "title": "Export as SVG",
+        "category": "Language Diagram",
+        "enablement": "activeCustomEditorId == 'ld.glspDiagram'"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "ld.editor.title",
+        "label": "Diagram"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "submenu": "ld.editor.title",
+          "group": "bookmarks"
+        }
+      ],
+      "ld.editor.title": [
+        {
+          "command": "ld.fit",
+          "group": "navigation",
+          "when": "activeCustomEditorId == 'ld.glspDiagram'"
+        },
+        {
+          "command": "ld.center",
+          "group": "navigation",
+          "when": "activeCustomEditorId == 'ld.glspDiagram'"
+        },
+        {
+          "command": "ld.layout",
+          "group": "navigation",
+          "when": "activeCustomEditorId == 'ld.glspDiagram'"
+        },
+        {
+          "command": "ld.exportAsSVG",
+          "when": "activeCustomEditorId == 'ld.glspDiagram'"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "key": "alt+f",
+        "mac": "alt+f",
+        "command": "ld.fit",
+        "when": "activeCustomEditorId == 'ld.glspDiagram'"
+      },
+      {
+        "key": "alt+c",
+        "mac": "alt+c",
+        "command": "ld.center",
+        "when": "activeCustomEditorId == 'ld.glspDiagram'"
+      },
+      {
+        "key": "alt+l",
+        "mac": "alt+l",
+        "command": "ld.layout",
+        "when": "activeCustomEditorId == 'ld.glspDiagram'"
+      },
+      {
+        "key": "ctrl+a",
+        "mac": "ctrl+a",
+        "command": "ld.selectAll",
+        "when": "activeCustomEditorId == 'ld.glspDiagram'"
+      },
+      {
+        "key": "alt+e",
+        "mac": "alt+e",
+        "command": "ld.exportAsSVG",
+        "when": "activeCustomEditorId == 'ld.glspDiagram'"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onLanguage:ld"
+  ],
+  "files": [
+    "lib",
+    "src",
+    "css"
+  ],
+  "main": "./lib/index",
+  "devDependencies": {
+    "@eclipse-glsp/vscode-integration": "^1.0.0",
+    "@types/node": "~20.5.0",
+    "@types/vscode": "^1.81.0",
+    "depcheck": "1.4.3",
+    "eslint": "^8.47.0",
+    "monaco-editor-workers": "0.41.0",
+    "prettier": "^3.0.2",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "latest",
+    "shx": "0.3.4",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "prepare": "yarn clean && yarn build && yarn lint",
+    "clean": "rimraf lib pack server workers tsconfig.tsbuildinfo",
+    "watch": "tsc -w",
+    "lint": "eslint --ext .ts,.tsx ./src",
+    "build": "tsc && yarn copy:monaco-worker && yarn copy:langium-worker && yarn copy:codicons",
+    "publish": "vsce publish",
+    "depcheck": "depcheck",
+    "copy:monaco-worker": "shx mkdir -p workers && shx cp ../../node_modules/monaco-editor-workers/dist/workers/editorWorker-iife.js workers/monaco-worker.js",
+    "copy:langium-worker": "shx mkdir -p workers && shx cp ../langium/bundle/langium-worker.js workers/langium-worker.js",
+    "copy:codicons": "shx mkdir -p node_modules/@vscode/ && shx cp -r ../../node_modules/@vscode/codicons node_modules/@vscode/",
+    "test": "echo \"No tests are set for vscode\""
+  }
+}

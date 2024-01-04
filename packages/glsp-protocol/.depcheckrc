@@ -1,0 +1,7 @@
+ignores: [
+    "rimraf",
+    "@types/jest",
+    "@types/node",
+    "jest",
+    "prettier",
+]

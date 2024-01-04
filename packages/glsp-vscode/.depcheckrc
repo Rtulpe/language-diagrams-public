@@ -1,0 +1,6 @@
+ignores: [
+    "vscode",
+    "monaco-editor-workers",
+    "prettier",
+    "rimraf",
+]

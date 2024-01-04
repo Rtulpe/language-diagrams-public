@@ -1,0 +1,140 @@
+.langium-editor-container,
+.elk-layout-options {
+    position: absolute;
+    right: 40px;
+    top: 430px;
+    text-align: left;
+    width: 425px;
+    display: block;
+    z-index: 1000;
+    border-style: solid;
+    border-width: 0px;
+    border-color: #bbb;
+    border-radius: 5px;
+    color: black;
+    user-select: none;
+    box-shadow: 0px 1px 6px var(--vscode-widget-shadow);
+}
+
+.elk-layout-options {
+    left: 40px;
+    top: 25px;
+    width: 400px;
+}
+
+.langium-editor-container :focus-visible {
+    outline: none;
+}
+
+.minimize-editor-button{
+    position: absolute;
+    right: 20px;
+    top: 440px;
+    z-index: 1000;
+}
+
+.minimize-layout-options-button {
+    position: absolute;
+    left: 20px;
+    top: 35px;
+    z-index: 1000;
+}
+
+.collapsible-editor,
+.collapsible-layout-options {
+    overflow: auto;
+    transition: max-height 0.2s ease-out;
+}
+
+.editor-header, 
+.layout-options-header {
+    padding: 0.4em;
+    text-align: left;
+    background: #cccccc;
+    border: 1px solid rgba(60, 60, 60, 0.6);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+}
+
+.header-icon i {
+    margin-right: 0.2em;
+}
+
+.langium-editor-container .editor-header,
+.elk-layout-options .layout-options-header {
+    background: var(--vscode-settings-dropdownBackground);
+    color: var(--vscode-titleBar-activeForeground);
+    border: 0;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 0.2em;
+    line-height: 1.5em;
+    box-shadow: none;
+    border-top: 2px solid var(--vscode-focusBorder);
+}
+
+.langium-editor-container .editor-header .header-icon,
+.elk-layout-options .layout-options-header .header-icon {
+    float: left;
+    padding: 0.2em;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.editor-body,
+.layout-options-body {
+    background: rgba(100, 100, 100, 0.2);
+    border: 1px solid rgba(60, 60, 60, 0.6);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    gap: 10px;
+}
+
+.layout-options-body {
+    background: var(--vscode-settings-dropdownBackground);
+    overflow: auto;
+}
+
+.langium-editor-container .editor-body {
+    border: 0;
+    box-shadow: none;
+    background: var(--vscode-list-focusBackground);
+    color: var(--vscode-titleBar-activeForeground);
+}
+
+.elk-layout-options :focus-visible {
+    outline: none;
+}
+
+.layout-options-header .layout-options-header-tools i {
+    border: none;
+    width: 1em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.layout-options-header .layout-options-header-tools i:hover:not(.clicked) {
+    background: var(--vscode-menubar-selectionBackground);
+}
+
+.layout-options-list h3,
+.layout-options-list strong,
+.layout-options-list text  {
+    color: #cccccc;
+}
+
+.layout-options-list input[type=number],
+.layout-options-list input[type=text]{
+    width: 12ch;
+}

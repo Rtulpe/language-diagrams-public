@@ -1,0 +1,31 @@
+name: Compile LaTeX
+
+on:
+    push:
+      branches-ignore:
+        - none
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Install Latex
+              run: |
+                sudo apt-get update
+                sudo apt-get install -y texlive-xetex latexmk texlive-bibtex-extra texlive-fonts-extra
+
+            - name: Compile LaTeX
+              run: |
+                cd docs/thesis
+                latexmk -pdf -output-directory=. thesis.tex
+
+            - name: Upload PDF
+              uses: actions/upload-artifact@v2
+              with:
+                name: thesis
+                path: docs/thesis/thesis.pdf
+            

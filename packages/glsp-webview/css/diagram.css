@@ -1,0 +1,81 @@
+/********************************************************************************
+ * Copyright (c) 2020 EclipseSource and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+svg {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #bbb;
+}
+
+.node {
+    fill: whitesmoke;
+    stroke-width: 2;
+    stroke: gray;
+}
+
+.node.mouseover {
+    fill: lightgray;
+    stroke-width: 2;
+    stroke: teal;
+}
+
+.node.selected {
+    fill: lightgray;
+    stroke-width: 2;
+    stroke: blue;
+    stroke-dasharray: 5, 5;
+    stroke-linecap: round;
+}
+
+.field {
+    fill: silver;
+    stroke-width: 1;
+    stroke: black;
+    stroke-dasharray: none;
+    stroke-linecap: none;
+}
+
+.field.mouseover {
+    fill: gray;
+    stroke-width: 1;
+    stroke: teal;
+}
+
+.field.selected {
+    fill: gray;
+    stroke-width: 1;
+    stroke: blue;
+    stroke-dasharray: 5, 5;
+    stroke-linecap: round;
+}
+
+.assoc_name {
+    fill: var(--vscode-titleBar-activeForeground);
+    stroke-width: 0.2;
+    stroke: var(--vscode-settings-dropdownBackground);
+}
+
+.sprotty-edge.selected .assoc_name {
+    stroke-dasharray: none;
+    stroke-linecap: unset;
+    font-size: 9pt;
+}
+
+.sprotty-edge.selected .sprotty-edge-arrow {
+    stroke-width: 3;
+    stroke-dasharray: none;
+    stroke-linecap: unset;
+}

@@ -1,0 +1,33 @@
+@startuml
+
+skinparam sequence {
+    ParticipantFontSize 17
+    ArrowFontSize 17
+    ActorFontSize 17
+}
+
+skinparam MaxMessageSize 250
+
+actor "User" as U
+
+box "Client" #LightYellow
+
+participant "Tool Palette" as TP
+
+participant "Viewer" as V
+
+participant "Command Stack" as CS
+
+participant "Action Dispatcher" as AD
+
+end box
+
+participant "Server" as S
+
+U -> TP: Selects "Create Node"
+TP -> V: Mouse Click with "Create Node" selected
+V -> CS: Sends "Create" command with context
+CS -> AD: Asks for "Create" operation
+AD -> S: Sends "CreateNode" operation
+
+@enduml

@@ -1,0 +1,10 @@
+ignores: [
+    "circular-dependency-plugin",
+    "rimraf",
+    "webpack-cli",
+    "yargs",
+    "inversify",
+    "@types/jest",
+    "@types/node",
+    "prettier",
+]

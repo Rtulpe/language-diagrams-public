@@ -1,0 +1,15 @@
+{
+    "projectName": "Ldv",
+    "languages": [{
+        "id": "ldv",
+        "grammar": "src/language/ldv.langium",
+        "fileExtensions": [".ldv"],
+        "textMate": {
+            "out": "syntaxes/ldv.tmLanguage.json"
+        },
+        "monarch": {
+            "out": "syntaxes/ldv.monarch.ts"
+        }
+    }],
+    "out": "src/language/generated"
+}

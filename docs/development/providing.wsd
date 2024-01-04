@@ -1,0 +1,23 @@
+@startuml
+!pragma teoz true
+
+box "Monaco Module in GLSP Client" #LightBlue
+box "LSP Communication" #LightCyan
+participant "Monaco Code Editor" as M
+
+participant "Langium" as L
+end box 
+
+participant "Client A/O Handler" as H
+
+end box
+
+participant "GLSP Server" as S
+H -> S: RequestValidationsAction
+note right : User clicks on a node
+S --> H: ReturnValidationsAction
+H -> M: setValue
+M -> L: Notification(textDocument/didChange)
+L -> M: Notification(textDocument/publishDiagnostics)
+
+@enduml

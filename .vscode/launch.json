@@ -1,0 +1,85 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Diagram Client & Server",
+            "type": "extensionHost",
+            "request": "launch",
+            "runtimeExecutable": "${execPath}",
+            "args": [
+                "${workspaceFolder}/workspace",
+                "--extensionDevelopmentPath=${workspaceFolder}/packages/glsp-vscode"
+            ],
+            "outFiles": [
+              "${workspaceFolder}/packages/glsp-vscode/lib/*.js",
+              "${workspaceFolder}/packages/glsp-client/node_modules/@eclipse-glsp/*/lib/**/*.js",
+              "${workspaceFolder}/packages/glsp-client/node_modules/@eclipse-glsp/*/lib/*.js",
+              "${workspaceFolder}/packages/glsp-server/node_modules/@eclipse-glsp/**/*.js",
+              "${workspaceFolder}/packages/glsp-server/lib/**/*.js"
+            ],
+            "autoAttachChildProcesses": true,
+            "sourceMaps": true
+
+        },
+        {
+            "name": "Launch Diagram Client (External GLSP Server)",
+            "type": "extensionHost",
+            "request": "launch",
+            "runtimeExecutable": "${execPath}",
+            "args": [
+              "${workspaceFolder}/workspace",
+              "--extensionDevelopmentPath=${workspaceFolder}/packages/glsp-vscode"
+            ],
+            "outFiles": [
+              "${workspaceFolder}/packages/glsp-vscode/lib/*.js",
+              "${workspaceFolder}/packages/glsp-client/node_modules/@eclipse-glsp/*/lib/**/*.js"
+            ],
+            "sourceMaps": true,
+            "env": {
+              "LD_SERVER_DEBUG": "true",
+              "LD_SERVER_PORT": "5007"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch External GLSP Server",
+            "program": "${workspaceFolder}/packages/glsp-server/lib/index.js",
+            "env": {
+              "NODE_ENV": "development"
+            },
+            "sourceMaps": true,
+            "outFiles": [
+              "${workspaceFolder}/packages/glsp-server/node_modules/@eclipse-glsp/**/*.js",
+              "${workspaceFolder}/packages/glsp-server/lib/**/*.js"
+            ],
+            "smartStep": true,
+            "internalConsoleOptions": "openOnSessionStart",
+            "outputCapture": "std"
+        },
+        {
+          "name": "Launch Langium Extension",
+          "type": "extensionHost",
+          "request": "launch",
+          "runtimeExecutable": "${execPath}",
+          "args": [
+            "${workspaceFolder}/workspace",
+            "--extensionDevelopmentPath=${workspaceFolder}/packages/langium"
+          ]
+        },
+        {
+          "name": "Attach to Language Server",
+          "type": "node",
+          "port": 6009,
+          "request": "attach",
+          "skipFiles": [
+              "<node_internals>/**"
+          ],
+          "sourceMaps": true,
+          "outFiles": [
+              "${workspaceFolder}/packages/langium-vscode/lib/**/*.js",
+              "${workspaceFolder}/packages/node_modules/langium"
+          ]
+      },
+    ],
+}

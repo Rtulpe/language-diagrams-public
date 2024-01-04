@@ -1,0 +1,40 @@
+@startuml
+
+frame "GLSP Server"{
+storage "Source Files" as MSO
+storage "Model State" as MST
+storage "Graphical Model" as MGR
+
+node "Model Storage" as TMS
+node "Graphical Model Factory" as TGF
+node "Action Dispatcher" as TAD
+}
+
+frame "GLSP Client"{
+storage "Model Source" as MMO
+storage "Sprotty Model" as MSP
+storage "View" as MVI
+
+node "Action Handler" as TAH
+node "Action Dispatcher" as TAD2
+node "Command Stack" as TCS
+node "Viewer" as TVI
+}
+
+MSO -down-> TMS : "Read in"
+TMS -right-> MST : "Generate"
+MST -up-> TGF : "Read in"
+TGF -right-> MGR : "Generate"
+MGR -down-> TAD : "Submitted"
+
+TAD -down-> TAH : "Receive Model"
+TAH -down-> MMO : "Pass as copy"
+MMO -left-> TAD2 : "Read in"
+TAD2 -up-> MSP : "Generates"
+MSP -left-> TCS : "Pass"
+TCS -down-> TVI : "Pass"
+
+TVI -left-> MVI : "Render"
+
+
+@enduml

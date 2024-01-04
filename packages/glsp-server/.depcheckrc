@@ -1,0 +1,10 @@
+ignores: [
+    "@eclipse-glsp/config",
+    "fs-extra",
+    "webpack-cli",
+    "inversify",
+    "@types/jest",
+    "prettier",
+    "rimraf",
+    "web-worker",
+]

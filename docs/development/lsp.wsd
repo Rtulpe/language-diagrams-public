@@ -1,0 +1,19 @@
+@startuml
+
+participant "IDE" as ide
+
+participant "Language Server" as server
+
+ide -> server: Notification(textDocument/didOpen)
+note left: User opens a file
+...
+ide -> server: Notification(textDocument/didChange)
+note left: User edits the file, then encounters an error
+server -> ide: Notification(textDocument/publishDiagnostics)
+...
+ide -> server: Notification(textDocument/didChange)
+note left: User fixes the error and saves the file
+ide -> server: Notification(textDocument/didSave)
+ide -> server: Notification(textDocument/didClose)
+
+@enduml

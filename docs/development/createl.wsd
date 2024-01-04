@@ -1,0 +1,30 @@
+@startuml
+
+skinparam sequence {
+    ParticipantFontSize 17
+    ArrowFontSize 17
+    ActorFontSize 17
+}
+
+skinparam MaxMessageSize 250
+
+actor "User" as U
+
+box "Client" #LightYellow
+
+participant "Viewer" as V
+
+participant "Command Stack" as C
+
+participant "Action Handler" as A
+
+end box
+
+participant "Server" as S
+
+S -> A: Receives Model
+A -> C: Sends "UpdateModel" Command
+C -> V: View is updated
+V -> U: User sees updated view
+
+@enduml

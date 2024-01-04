@@ -1,0 +1,24 @@
+@startuml template
+    folder "glsp-client" as C {
+        component "Client configuration" as CC
+        folder "Vscode" as CV {
+            component "Extension" as CVE
+            component "Webview" as CVW
+        }
+        database "Workspace" as CW
+    }
+
+    folder "glsp-server" as S {
+        component "Server configuration" as SC
+        component "Action Handlers" as SH
+        component "Model" as SM
+    }
+
+SM <-> CW : "R/W"
+CVW ..> CVE : "Runs in bundle"
+CC ..> CVW: "Configures"
+CVW <--> SH : "Communicates"
+SC ..> SH : "Configures"
+SC ..> SM : "Configures"
+
+@enduml
