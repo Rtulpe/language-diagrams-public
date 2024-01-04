@@ -29,7 +29,7 @@
     "prettier": "^3.0.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "latest",
-    "source-map-loader": "^4.0.1",
+    "source-map-loader": "^4.0.2",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6",
     "webpack": "^5.88.2",
