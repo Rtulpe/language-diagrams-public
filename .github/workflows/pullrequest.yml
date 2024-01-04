@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: jwalton/gh-find-current-pr@v1
         id: findPr
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-env
       - uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
@@ -37,6 +37,6 @@ jobs:
   depcheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-env
       - run: gulp depcheck
