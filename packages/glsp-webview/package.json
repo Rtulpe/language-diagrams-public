@@ -26,7 +26,7 @@
   "devDependencies": {
     "@eclipse-glsp/vscode-integration-webview": "^1.0.0",
     "@types/jest": "^29.5.3",
-    "@types/node": "~20.5.0",
+    "@types/node": "~20.10.7",
     "circular-dependency-plugin": "^5.2.2",
     "css-loader": "^6.7.1",
     "depcheck": "1.4.3",
