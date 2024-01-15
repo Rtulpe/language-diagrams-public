@@ -1370,10 +1370,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:~20.5.0":
-  version: 20.5.0
-  resolution: "@types/node@npm:20.5.0"
-  checksum: 659bc5fc93b5c02bd88ca4bfae4f6b9dc307d45884d1dd9d69df85819a9943cdc00cd3c87eec3048866df6a67f52297f74d170e47a44f61edb3e8f770d94e85e
+"@types/node@npm:~20.11.2":
+  version: 20.11.2
+  resolution: "@types/node@npm:20.11.2"
+  dependencies:
+    undici-types: ~5.26.4
+  checksum: 28ce6425cd1cc93aac12309c81b986a9fe1be8da6a877bc51ee890ea46174a104177d74c9b7a86907e54cc66917fdb57259b0c8456ec4cabb07faf174e790556
   languageName: node
   linkType: hard
 
@@ -7239,7 +7241,7 @@ __metadata:
   resolution: "language-diagrams-langium@workspace:packages/langium"
   dependencies:
     "@types/jest": ^29.5.3
-    "@types/node": ~20.5.0
+    "@types/node": ~20.11.2
     "@types/vscode": ~1.81.0
     depcheck: 1.4.3
     esbuild: ^0.19.2
@@ -7266,7 +7268,7 @@ __metadata:
     "@eclipse-glsp/layout-elk": ^1.0.0
     "@eclipse-glsp/protocol": ^1.0.0
     "@types/jest": ^29.5.3
-    "@types/node": ~20.5.0
+    "@types/node": ~20.11.2
     depcheck: 1.4.3
     eslint: ^8.47.0
     jest: ^29.6.2
@@ -7287,7 +7289,7 @@ __metadata:
     "@eclipse-glsp/protocol": ^1.0.0
     "@eclipse-glsp/server-node": ^1.0.0
     "@types/jest": ^29.5.3
-    "@types/node": ~20.5.0
+    "@types/node": ~20.11.2
     circular-dependency-plugin: ^5.2.2
     depcheck: 1.4.3
     eslint: ^8.47.0
@@ -7313,7 +7315,7 @@ __metadata:
   resolution: "language-diagrams-vscode@workspace:packages/glsp-vscode"
   dependencies:
     "@eclipse-glsp/vscode-integration": ^1.0.0
-    "@types/node": ~20.5.0
+    "@types/node": ~20.11.2
     "@types/vscode": ^1.81.0
     depcheck: 1.4.3
     eslint: ^8.47.0
@@ -7334,7 +7336,7 @@ __metadata:
     "@eclipse-glsp/protocol": ^1.0.0
     "@eclipse-glsp/vscode-integration-webview": ^1.0.0
     "@types/jest": ^29.5.3
-    "@types/node": ~20.5.0
+    "@types/node": ~20.11.2
     balloon-css: ^1.2.0
     circular-dependency-plugin: ^5.2.2
     css-loader: ^6.7.1
@@ -10923,6 +10925,13 @@ __metadata:
     object.reduce: ^1.0.0
     undertaker-registry: ^1.0.0
   checksum: 4378e3e9d9e5d6f2ceeb81eff0ae5d7c63b9eaba000fae3f0177197f991aabef29104eabf5188622d38f2e3c58dc96cfd9c182b822b6f405dbf3f63f123389d5
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5"
+  checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
   languageName: node
   linkType: hard
 
