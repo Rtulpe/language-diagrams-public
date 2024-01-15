@@ -130,7 +130,7 @@
     "depcheck": "1.4.3",
     "eslint": "^8.47.0",
     "monaco-editor-workers": "0.41.0",
-    "prettier": "^3.0.2",
+    "prettier": "^3.2.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "latest",
     "shx": "0.3.4",
