@@ -131,7 +131,7 @@
     "eslint": "^8.47.0",
     "monaco-editor-workers": "0.41.0",
     "prettier": "^3.2.5",
-    "reflect-metadata": "^0.1.13",
+    "reflect-metadata": "^0.2.1",
     "rimraf": "latest",
     "shx": "0.3.4",
     "typescript": "^5.1.6"
