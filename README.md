@@ -22,6 +22,12 @@ To build the packages, run:
 npx gulp build
 ```
 
+## Running
+
+To run the extension, select "Launch Diagram Client & Server" in the "Run and Debug" menu.
+
+![Running the extension](docs/development/run.png)
+
 ## Contents
 
 ### [Documentation](./docs/development/)
