@@ -21,7 +21,7 @@
     "monaco-editor-wrapper": "~1.6.0",
     "snabbdom": "^3.5.1",
     "sprotty-vscode-webview": "0.5.0",
-    "style-loader": "^3.3.3"
+    "style-loader": "^3.3.4"
   },
   "devDependencies": {
     "@eclipse-glsp/vscode-integration-webview": "^1.0.0",
@@ -39,7 +39,7 @@
     "rimraf": "latest",
     "shx": "^0.3.4",
     "source-map-loader": "^5.0.0",
-    "style-loader": "^3.3.1",
+    "style-loader": "^3.3.4",
     "ts-jest": "^29.1.1",
     "ts-loader": "^9.4.2",
     "typescript": "^5.1.6",
