@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.3",
-    "@types/node": "~20.5.0",
+    "@types/node": "~20.11.19",
     "circular-dependency-plugin": "^5.2.2",
     "depcheck": "1.4.3",
     "eslint": "^8.47.0",
