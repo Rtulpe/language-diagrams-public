@@ -125,7 +125,7 @@
   "main": "./lib/index",
   "devDependencies": {
     "@eclipse-glsp/vscode-integration": "^1.0.0",
-    "@types/node": "~20.5.0",
+    "@types/node": "~20.11.20",
     "@types/vscode": "^1.81.0",
     "depcheck": "1.4.3",
     "eslint": "^8.47.0",
