@@ -126,7 +126,7 @@
   "devDependencies": {
     "@eclipse-glsp/vscode-integration": "^1.0.0",
     "@types/node": "~20.5.0",
-    "@types/vscode": "^1.81.0",
+    "@types/vscode": "^1.87.0",
     "depcheck": "1.4.3",
     "eslint": "^8.47.0",
     "monaco-editor-workers": "0.41.0",
