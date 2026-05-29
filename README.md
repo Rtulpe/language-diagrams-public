@@ -40,19 +40,19 @@ Open the model view with (Alt + D).
 
 Holds run & debug configuration for VSCode.
 
-### [GLSP Server](./glsp-server/)
+### [GLSP Server](./packages/glsp-server/)
 
 Back-end which reads and writes from/to source files.
 
-### [GLSP Extension](./glsp-vscode/)
+### [GLSP Extension](./packages/glsp-vscode/)
 
 VS Code extension responsible for starting the glsp-server and registering the webview as a custom editor.
 
-### [GLSP Webview](./glsp-webview/)
+### [GLSP Webview](./packages/glsp-webview/)
 
 Integration of the diagram as webview.
 
-### [Langium](./langium/)
+### [Langium](./packages/langium/)
 
 Langium server, which enables Monaco editor to use LSP features.
 
