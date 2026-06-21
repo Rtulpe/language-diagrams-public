@@ -1412,10 +1412,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/vscode@npm:^1.81.0, @types/vscode@npm:~1.81.0":
-  version: 1.81.0
-  resolution: "@types/vscode@npm:1.81.0"
-  checksum: 470b9aa74552fbeeaaee5ecba237d2ab12a18fe7c5411e073203af2e86644b9d40bb98fb3c35497a36591884a35e65e1e838f7fc07a5f9ac8dc537e4ec7fd378
+"@types/vscode@npm:^1.89.0, @types/vscode@npm:~1.89.0":
+  version: 1.89.0
+  resolution: "@types/vscode@npm:1.89.0"
+  checksum: cd1f0e30d8389688727813b56d300f4237a440130b9cca5ce3dc6be142c71289dda17cfb68790c0032000d98ad798a3fad84ea8f07fb47de02f208e7b029e153
   languageName: node
   linkType: hard
 
@@ -7279,7 +7279,7 @@ __metadata:
   dependencies:
     "@types/jest": ^29.5.3
     "@types/node": ~20.5.0
-    "@types/vscode": ~1.81.0
+    "@types/vscode": ~1.89.0
     depcheck: 1.4.3
     esbuild: ^0.19.2
     eslint: ^8.47.0
@@ -7353,7 +7353,7 @@ __metadata:
   dependencies:
     "@eclipse-glsp/vscode-integration": ^1.0.0
     "@types/node": ~20.5.0
-    "@types/vscode": ^1.81.0
+    "@types/vscode": ^1.89.0
     depcheck: 1.4.3
     eslint: ^8.47.0
     monaco-editor-workers: 0.41.0
